@@ -33,18 +33,29 @@ cursor: pointer;
     }
     </style>
     <script>
-
+// js should be here
     </script>
 </head>
 <body>
 <div align="center"><h1>Here you can search for the MOVIE you want to see tonight</h1></div>
+<!-- action and method attributes should be used for form tag
+like <form action="https://yandex.by/" method="post">
+should be 1 form with one button
+-->
 <form>
-    <p id="newSite" action= «https://yandex.by/» method="post" align="center"><input type="text" name="Film name" placeholder="Enter a MOVIE-name" size="50" /></p>
+    <p id="newSite" action= «https://yandex.by/» method="post" align="center">
+<!-- for name better use camelCase, like name="filmName"    -->
+	    <input type="text" name="Film name" placeholder="Enter a MOVIE-name" size="50" />
+	</p>
 </form>
 <form>
     <p align="center">
         <button id="searchButton" type="submit" >
-            <a onclick="location.href='https://yandex.by/';return false;">SEARCH</a></button>
+<!-- 	DON'T use link (tag a) inside button	 -->
+<!-- 	Code inside onclick is js, it means redirect to yandex, 
+better use click method in js instead of attribute onclick, because it is easiar to support js located in one place  -->
+            <a onclick="location.href='https://yandex.by/';return false;">SEARCH</a>
+	    </button>
         <button id="cancelButton" type="reset" >CANCEL</button>
     </p>
 </form>
